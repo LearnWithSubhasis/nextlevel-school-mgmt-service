@@ -12,9 +12,9 @@ import otp.pojo.SMSPojo;
 public class SMSService {
 
 
-    private final String ACCOUNT_SID ="AC29defbeaf1fa705c3f521c1cb1c1ffae";
+    private final String ACCOUNT_SID ="SID";
 
-    private final String AUTH_TOKEN = "fb845d977044e4b3f3e0fa278b4d5fdc";
+    private final String AUTH_TOKEN = "TOKEN";
 
     private final String FROM_NUMBER = "enter the phone number generated from Twilio";
 
