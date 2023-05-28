@@ -63,7 +63,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: noreply_schoolmgmt@gmail.com
-    password: uiop uwbs rnow qnwe
+    password: <password>
     properties:
       mail:
         smtp:
