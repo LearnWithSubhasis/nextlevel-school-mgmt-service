@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "4245b126-b272-44bc-b12d-e375b99c9c82",
+		"name": "nextlevel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "organisation",
+			"item": [
+				{
+					"name": "orgs - list",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "timetable",
+			"item": [
+				{
+					"name": "timetable - create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entries\": [\n        {\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"10:45:00\",\n            \"subject\" :\n            {\n                \"subjectId\": 2\n            },\n            \"teacher\": {\n                \"teacherId\": 2\n            }\n        },\n                {\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"11:00:00\",\n            \"endTime\": \"11:45:00\",\n            \"subject\" :\n            {\n                \"subjectId\": 3\n            },\n            \"teacher\": {\n                \"teacherId\": 3\n            }\n        },\n        {\n            \"dayOfWeek\": \"TUESDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"10:45:00\",\n            \"subject\" :\n            {\n                \"subjectId\": 1\n            },\n            \"teacher\": {\n                \"teacherId\": 1\n            }\n        }        \n    ],\n    \"startDate\": \"2022-11-30\", \n    \"endDate\": \"2023-11-30\",    \n    \"section\": {\n        \"sectionId\": 2\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/timetables",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"timetables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "timetable - delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entries\": [\n        {\"startTime\": \"2022-11-30T18:57:22.746Z\"}\n    ],\n    \"section\": {\n        \"sectionId\": 6\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/timetables/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"timetables",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "timetables - list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timetable\": {\n    \"entries\": [\n      {\"start_time\": \"2022-11-30T18:57:22.746Z\"}\n    ],\n    \"section\": {\n      \"sectionId\": 1\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/timetables",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"timetables"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "timetable entries",
+			"item": [
+				{
+					"name": "timetable entry - create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entries\": [\n        {\"start_time\": \"2022-11-30T18:57:22.746Z\"}\n    ],\n    \"section\": {\n        \"sectionId\": 4\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/timetables",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"timetables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "timetable entries - list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timetable\": {\n    \"entries\": [\n      {\"start_time\": \"2022-11-30T18:57:22.746Z\"}\n    ],\n    \"section\": {\n      \"sectionId\": 1\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/entries",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"entries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "teacher",
+			"item": [
+				{
+					"name": "teachers - list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/v1/teachers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"teachers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teachers - create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Teacher 3\",\n  \"user\": {\n    \"userId\": 3\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/teachers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"teachers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "students - list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/v1/students",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subject",
+			"item": [
+				{
+					"name": "subjects - list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/v1/subjects",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subjects - create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"History\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/v1/subjects",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "section",
+			"item": [
+				{
+					"name": "sections - list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/v1/sections",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"sections"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

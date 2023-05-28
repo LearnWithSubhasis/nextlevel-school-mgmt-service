@@ -1,0 +1,34 @@
+package org.nextlevel.report.grade;
+
+import org.nextlevel.student.Student;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Component
+public class GradeReport {
+    private Long gradeId;
+    //private Integer facultyStrength;
+    private Long studentStrength;
+    private String reportType;
+    private Long attendanceCountTotal;
+    private Long attendanceCountPresent;
+    private Long attendanceCountAbsent;
+    private Float attendanceCountPresentPercentage;
+    private Float attendanceCountAbsentPercentage;
+    private Float attendanceBoysPercentage;
+    private Float attendanceGirlsPercentage;
+    private Long attendanceBoysCountTotal;
+    private Long attendanceGirlsCountTotal;
+    private Long boysStudentCount;
+    private Long girlsStudentCount;
+    private List<Student> greenZone;
+    private List<Student> yellowZone;
+    private List<Student> redZone;
+}

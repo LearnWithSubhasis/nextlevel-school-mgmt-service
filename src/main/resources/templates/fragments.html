@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	  xmlns:padding="http://www.w3.org/1999/xhtml">
+<head th:fragment="html_head(pageTitle)">
+	<meta charset="UTF-8">
+	<title>NextLevel School Mgmt::[[${pageTitle}]]</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/icons/style.css}" rel="stylesheet" type="text/css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+	<!--
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg==" crossorigin="anonymous" />
+	-->
+
+	<!--
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg==" crossorigin="anonymous" />
+
+	<link th:rel="stylesheet" th:href="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css}"/>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/moment/moment.min.js}"></script>
+	<script th:src="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js}"></script>
+	-->
+
+	<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		.column {
+		  float: left;
+		  width: 10%;
+		  padding: 5px;
+		}
+
+		/* Clearfix (clear floats) */
+		.row::after {
+		  content: "";
+		  clear: both;
+		  display: table;
+		}
+	</style>
+</head>
+<body>
+	<th:block th:fragment="header" class="header">
+		<div class="header">
+			<div class="row">
+				<div class="column" padding="25px">
+					<img src="https://www.nextlevel.org/nextlevel_icon.svg" width="100" height="50">
+				</div>
+<!--				<div class="column">-->
+<!--					<h1><a href='https://www.nextlevel.org'>| Next Level</a></h1>-->
+<!--				</div>-->
+
+				<div float="right">
+					<div sec:authorize="isAuthenticated()" class="text-center p-3" id="loggedinuser">
+						<form th:action="@{/logout}" method="post">
+							Welcome <b><span sec:authentication="name">"@{${#authentication.getPrincipal().getUsername()}}"</span></b>
+							<img th:src="@{${#authentication.getPrincipal().getProfileImageURL()}}" width="40" height="40"></img>
+<!--							<img th:src="@{/images/profile_2.png}" width="40" height="40"></img>&nbsp;-->
+							<input type="submit" value="Logout" />
+						</form>
+					</div>
+				</div>
+
+			</div>
+			<div>Education Management System</div>
+		</div>
+
+	</th:block>
+
+	<div class="main" style="display: flex;">
+		<div style="margin-right: 10px;">
+			<div id="nav"></div>
+		</div>
+		<div style="flex-grow: 1">
+			<div id="dp"></div>
+		</div>
+	</div>
+
+	<!-- DayPilot library -->
+	<script src="js/daypilot/daypilot-all.min.js"></script>
+
+	<script>
+		$.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
+			icons: {
+				time: 'far fa-clock',
+				date: 'far fa-calendar',
+				up: 'fas fa-arrow-up',
+				down: 'fas fa-arrow-down',
+				previous: 'fas fa-chevron-left',
+				next: 'fas fa-chevron-right',
+				today: 'far fa-calendar-check-o',
+				clear: 'far fa-trash',
+				close: 'far fa-times'
+			} });
+
+		$('#eventStartTimeDiv').datetimepicker({
+			format: 'DD/MM/YYYY h:mm A'
+		});
+
+		$('#eventEndTimeDiv').datetimepicker({
+			format: 'DD/MM/YYYY h:mm A'
+		});
+	</script>
+</body>
+</html>

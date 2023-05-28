@@ -1,0 +1,11 @@
+﻿No,Student Name,Sex,Role No,Age,Religion,Nationality,Orphan Status,Social Needs,Repeaters,Parent Name,Parent Email
+1,Student 1,Male,1,7,R 1,N 1,OS 1,SN 1,Y,PN 1,pn1@test.com
+2,Student 2,Female,2,8,R 2,N 2,OS 2,SN 2,N,PN 2,pn2@test.com
+3,Student 3,Male,3,8,R 3,N 3,OS 3,SN 3,Y,,pn3@test.com
+4,Student 4,Female,4,9,,N 4,,SN 4,N,PN 4,pn4@test.com
+5,Student 5,Male,5,10,R 5,N 5,OS 5,SN 5,Y,,pn5@test.com
+6,Student 6,Female,6,7,R 6,,OS 6,SN 6,N,PN 6,pn6@test.com
+7,Student 7,Male,7,6,R 7,N 7,OS 7,SN 7,Y,PN 7,
+8,Student 8,Female,8,9,R 8,N 8,OS 8,SN 8,,PN 8,pn8@test.com
+9,Student 9,Male,9,8,R 9,N 9,OS 9,,Y,PN 9,pn9@test.com
+10,Student 10,Female,10,8,R 10,N 10,OS 10,SN 10,N,PN 10,xyxa@gmail.com

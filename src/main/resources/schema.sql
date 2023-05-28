@@ -1,0 +1,11 @@
+--drop table user_role if exists
+--drop table role if exists
+--drop table user if exists
+--
+--create table  user(user_id Integer identity not null primary key, email varchar (20), password varchar(20), name varchar(50),username varchar(50))
+--create table role(role_id  Integer IDENTITY primary key,role varchar(20))
+--create table  user_role(role_id INT , user_id INT , FOREIGN KEY (role_id) references user(user_id));
+
+--insert into  users (auth_type, email, username, password, enabled) values ('DATABASE', 'admin@gmail.com', 'admin', 'admin', 1);
+--insert into  roles (role_id, name) values(1, 'ADMIN');
+--insert into users_roles (role_id, user_id)  values(1, 1);

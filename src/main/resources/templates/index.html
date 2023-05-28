@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='NextLevel School Management - Home')" />
+<body>
+	<div th:replace="fragments :: header"></div>
+
+	<div class="container text-center">
+		<div>
+			<br/>
+			<h4><a th:href="@{/list}">View all organisations</a></h4>
+			<br/>
+			<h4><a th:href="@{/new}">Create a New Organisation</a></h4>
+			<br/>
+		</div>
+		<div class="container mt-5">
+			<h2>What is NextLevel School Management</h2>
+			<video src="api/v1/video/appfeatures1" width="600px" height="400px" controls preload="none">
+			</video>
+		</div>
+	</div>
+</body>
+</html>

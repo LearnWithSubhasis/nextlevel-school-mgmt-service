@@ -1,0 +1,21 @@
+role_id,name,is_active,title
+1,NEXTLEVEL_USER,1,"NextLevel User"
+2,NEXTLEVEL_SUPER_ADMIN,1,"NextLevel Super Administrator"
+3,ANY_PUBLIC_USER,1,"Public User"
+4,NGO_GLOBAL_USER,1,"NGO Regular User"
+5,STUDENT_USER,1,Student
+6,PARENT_USER,1,Parent
+7,NGO_GLOBAL_ADMIN,1,"NGO Global Administrator"
+8,ORG_ADMIN,1,"Organisation Administrator"
+9,SCHOOL_ADMIN,1,"School Administrator"
+10,GRADE_ADMIN,1,"Grade Administrator"
+11,SECTION_ADMIN,1,"Section Administrator"
+12,GLOBAL_EVENT_ADMIN,1,"Global Event Administrator"
+13,ORG_EVENT_ADMIN,1,"Organisation Event Administrator"
+14,SCHOOL_EVENT_ADMIN,1,"School Event Administrator"
+15,GRADE_EVENT_ADMIN,1,"Grade Event Administrator"
+16,SECTION_EVENT_ADMIN,1,"Section Event Administrator"
+17,SCHOOL_PRINCIPAL_ADMIN,1,Principal
+18,SCHOOL_TEACHER_ADMIN,1,Teacher
+19,SCHOOL_FINANCE_ADMIN,1,"School Finance Administrator"
+20,SCHOOL_SPORTS_ADMIN,1,"School Sports Administrator"

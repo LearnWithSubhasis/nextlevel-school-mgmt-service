@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Create New Event')" />
+<body>
+	<div th:replace="fragments :: header"></div>
+	<div align="center">	
+		<h1>Create New Event</h1>
+		<br/>
+		<form action="#" th:action="@{'/event/save?orgId=' + ${orgId} + '&schoolId=' + ${schoolId} + '&gradeId=' + ${gradeId} + '&amp;sectionId=' + ${sectionId}}" th:object="${event}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Event Name:</td>
+					<td><input type="text" th:field="*{name}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td><input type="text" th:field="*{eventDescription}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Event Type:</td>
+					<td><input type="text" th:field="*{eventType}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Event Fees:</td>
+					<td><input type="text" th:field="*{eventCost}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Who Can Participate:</td>
+					<td><input type="text" th:field="*{whoCanParticipate}" class="form-control" /></td>
+				</tr>
+
+				<tr>
+					<td>Event Start Time:</td>
+					<td><input type="date" th:field="*{eventStartTime}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Event End Time:</td>
+					<td><input type="date" th:field="*{eventEndTime}" class="form-control" /></td>
+				</tr>
+
+
+				<!--
+				<tr>
+					<div class="form-group">
+						<td><label for="eventStartTime">Event Start Date:</label></td>
+						<td>
+							<div class="input-group date" id="eventStartTimeDiv" data-target-input="nearest">
+								<input type="text" class="form-control datetimepicker-input" data-target="#eventStartTimeDiv"
+									   th:field="*{eventStartTime}" id="eventStartTime" placeholder="Date"/>
+								<div class="input-group-append" data-target="#eventStartTimeDiv" data-toggle="datetimepicker">
+									<div class="input-group-text"><i class="fa fa-calendar-alt"></i></div>
+								</div>
+							</div>
+						</td>
+					</div>
+				</tr>
+				<tr>
+					<div class="form-group">
+						<td><label for="eventStartTime">Event End Date:</label></td>
+						<td>
+							<div class="input-group date" id="eventEndTimeDiv" data-target-input="nearest">
+								<input type="text" class="form-control datetimepicker-input" data-target="#eventEndTimeDiv"
+									   th:field="*{eventEndTime}" id="eventEndTime" placeholder="Date"/>
+								<div class="input-group-append" data-target="#eventEndTimeDiv" data-toggle="datetimepicker">
+									<div class="input-group-text"><i class="fa fa-calendar-alt"></i></div>
+								</div>
+							</div>
+						</td>
+					</div>
+				</tr>
+				-->
+
+				<tr>
+					<td colspan="2" align="center"><button type="submit" class="btn btn-primary">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<script>
+		$.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
+			icons: {
+				time: 'far fa-clock',
+				date: 'far fa-calendar',
+				up: 'fas fa-arrow-up',
+				down: 'fas fa-arrow-down',
+				previous: 'fas fa-chevron-left',
+				next: 'fas fa-chevron-right',
+				today: 'far fa-calendar-check-o',
+				clear: 'far fa-trash',
+				close: 'far fa-times'
+			} });
+
+		$('#eventStartTimeDiv').datetimepicker({
+			format: 'DD/MM/YYYY h:mm A'
+		});
+
+		$('#eventEndTimeDiv').datetimepicker({
+			format: 'DD/MM/YYYY h:mm A'
+		});
+	</script>
+</body>
+</html>

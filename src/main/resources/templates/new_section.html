@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Create New Section')" />
+<body>
+	<div th:replace="fragments :: header"></div>
+	<div align="center">	
+		<h1>Create New Section</h1>
+		<br/>
+		<form action="#" th:action="@{'/section/save?orgId=' + ${orgId} + '&schoolId=' + ${schoolId} + '&gradeId=' + ${gradeId}}" th:object="${section}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Section Name:</td>
+					<td><input type="text" th:field="*{name}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><button type="submit" class="btn btn-primary">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

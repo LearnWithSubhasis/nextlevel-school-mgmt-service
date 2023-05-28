@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Edit Student')" />
+<body>
+	<div th:replace="fragments :: header"></div>
+	<div align="center">
+		<h1>Edit Student</h1>
+		<br/>
+		<form action="#" th:action="@{'/student/save?orgId=' + ${orgId} + '&schoolId=' + ${schoolId} + '&gradeId=' + ${gradeId} + '&amp;sectionId=' + ${sectionId}} " th:object="${student}" method="post">
+			<table>
+				<tr>
+					<td>Student ID:</td>
+					<td><input type="text" th:field="*{studentId}" readonly="readonly" /></td>
+				</tr>			
+				<tr>
+					<td>Student Name:</td>
+					<td><input type="text" th:field="*{name}" /></td>
+				</tr>
+				<tr>
+					<td>Role No:</td>
+					<td><input type="number" th:field="*{roleNo}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Sex:</td>
+					<td><input type="text" th:field="*{sex}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Age:</td>
+					<td><input type="text" th:field="*{age}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-primary">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
